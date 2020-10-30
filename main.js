@@ -1,9 +1,21 @@
-function input(myLogin,myPassword) {
-    this.login=myLogin
-    this.login=myPassword
-}
 MyData={
     login:"",
-    Password:0,
-    function: input(myLogin,myPassword)
+    Password:"",
+    input(a,b){
+        this.login=a;
+        this.Password=b;
+    },
+    log(){
+        console.log(this.login)
+    }
 };
+let a =[];
+const n=20;
+for(i=0;i<n;++i){
+    a[i]=MyData;
+    a[i].input(`Login ${i}`,`Password ${i}`)
+}
+for(i=0;i<n;++i){
+    a[i].log();
+}
+
