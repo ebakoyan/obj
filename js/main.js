@@ -36,22 +36,33 @@ function shuffle(array) {
 block1=0,block2=1;
 s=0;
 function test(a,b){
-  if(a.src===b.src){
-    b.style.display="none";
-    a.style.display="none";
+  if(a.src===b.src&& a!=b){
+    b.src="./img/green.png";
+    a.src="./img/green.png";
+    a.style.opacity="1";
+    b.style.opacity="1";
+    a.style.zIndex="-1";
+    b.style.zIndex="-1";
   }
-  else return;
+  else {
+    a.style.opacity="0";
+    b.style.opacity="0";
+  };
 }
 function Game(block){
   s++;
   block=block || window.event;
   block=block.target || block.srcElement;
-  block.style.zIndex="600";
+  // block.style.display="flex";
+  block.style.opacity="1";
   if(s==1){
   block1=block;
   }
   else if(s==2){
+    block1.style.opacity="1";
     block2=block;
+    block2.style.opacity="1";
+
     test(block1,block2);
     s=0;
   }
@@ -59,7 +70,7 @@ function Game(block){
 function timeFunction() {
   setTimeout(function(){
     for(i=0;i<fruit.length;i++){
-      fruit[i].getElementsByTagName("img")[0].style.zIndex = "0";
+      fruit[i].getElementsByTagName("img")[0].style.opacity = "0";
 } }, 2000);
 }
 function Play(){
