@@ -23,13 +23,13 @@ function shuffle(array) {
   shuffle(listBlock);
   shuffle(listIMG);
   fruit= document.getElementsByClassName("fruit");
-//   for(i=0,j=19;i<10;i++,j--){
-//     a=listIMG[i];
-//     str="./img/";
-//     str2=String(a);
-//     str3=".png"
-//     res=str.concat(str2);
-//     res=res.concat(str3);
-//     fruit[listBlock[i]].getElementsByTagName("img")[0].setAttribute("src",res);  
-//     fruit[listBlock[j]].getElementsByTagName("img")[0].setAttribute("src",res);  
-// }
+  for(i=0,j=19;i<10;i++,j--){
+    a=listIMG[i];
+    str="./img/";
+    str2=String(a);
+    str3=".png"
+    res=str.concat(str2);
+    res=res.concat(str3);
+    fruit[listBlock[i]].getElementsByTagName("img")[0].setAttribute("src",res);  
+    fruit[listBlock[j]].getElementsByTagName("img")[0].setAttribute("src",res);  
+}
