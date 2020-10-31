@@ -30,6 +30,6 @@ function shuffle(array) {
     str3=".png"
     res=str.concat(str2);
     res=res.concat(str3);
-    fruit[i].getElementsByTagName("img")[0].setAttribute("src",res);  
-    fruit[j].getElementsByTagName("img")[0].setAttribute("src",res);  
+    fruit[listBlock[i]].getElementsByTagName("img")[0].setAttribute("src",res);  
+    fruit[listBlock[j]].getElementsByTagName("img")[0].setAttribute("src",res);  
 }
