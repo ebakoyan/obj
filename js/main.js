@@ -2,6 +2,9 @@ listBlock= [];
 listIMG= [];
 const BlockSize=20;
 const IMGSize=10;
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 for(i=0;i<20;i++){
     listBlock[i]=i;
     if(i<=9){
@@ -43,29 +46,35 @@ function test(a,b){
     b.style.opacity="1";
     a.style.zIndex="-1";
     b.style.zIndex="-1";
+    document.getElementById("Score").innerHTML=Number(document.getElementById("Score").innerHTML)+2;
+    if(Number(document.getElementById("Score").innerHTML)==20){
+      location.reload();
+    }
   }
   else {
-    a.style.opacity="0";
-    b.style.opacity="0";
+    // a.classList.remove(vis)
+    // b.style.opacity="0";
   };
 }
+
 function Game(block){
   s++;
   block=block || window.event;
   block=block.target || block.srcElement;
   // block.style.display="flex";
-  block.style.opacity="1";
+  block.classList.add("visible");
   if(s==1){
   block1=block;
   }
   else if(s==2){
-    block1.style.opacity="1";
     block2=block;
-    block2.style.opacity="1";
 
     test(block1,block2);
     s=0;
+      block1.classList.remove("visible")
+      block2.classList.remove("visible")
   }
+ 
 }
 function timeFunction() {
   setTimeout(function(){
